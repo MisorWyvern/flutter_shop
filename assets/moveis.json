@@ -1,12 +1,6 @@
 
-import 'package:flutter/material.dart';
-import 'package:flutter_shop/main.dart';
-import 'package:flutter_shop/widgets/custom_appbar.dart';
-import 'package:flutter_shop/widgets/products_grid.dart';
-
-class HomePage extends StatelessWidget {
-  final List moveis = [
-    {
+    [
+{
       "titulo": "Mesa",
       "preco": 300,
       "foto": "movel1.jpeg",
@@ -55,15 +49,5 @@ class HomePage extends StatelessWidget {
       "descricao":
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean aliquam libero id mauris mollis convallis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
     }
-  ];
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: scaffoldBgColor,
-      appBar: CustomAppBar(
-        title: "Início",
-      ),
-      body: ProductsGrid(products: moveis),
-    );
-  }
-}
+    ]
+

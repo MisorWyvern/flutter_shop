@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/main.dart';
 import 'package:flutter_shop/widgets/custom_appbar.dart';
 
 class Detalhes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[200],
+      backgroundColor: scaffoldBgColor,
       appBar: CustomAppBar(title: "Flutter Shop"),
       body: Container(
           child: FlatButton(

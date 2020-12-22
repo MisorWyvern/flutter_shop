@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shop/pages/carrinho.dart';
 import 'package:flutter_shop/pages/home_page.dart';
 
+final Color scaffoldBgColor = Colors.grey[200];
+
 void main() {
   runApp(FlutterShop());
 }
