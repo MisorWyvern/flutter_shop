@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop/models/product.dart';
+import 'package:flutter_shop/pages/detalhes.dart';
 
 class ProductsGridItem extends StatelessWidget {
   final Product item;
@@ -21,13 +22,19 @@ class ProductsGridItem extends StatelessWidget {
       margin: EdgeInsets.all(8),
       child: ClipRRect(
         borderRadius: BorderRadius.circular(16),
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            ProductsGridItemImage(imagePath: "assets/images/${item.foto}"),
-            ProductsGridItemGradient(),
-            ProductsGridItemTitle(title: item.titulo),
-          ],
+        child: InkWell(
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Detalhes(product: item)));
+          },
+          child: Stack(
+            alignment: Alignment.center,
+            children: [
+              ProductsGridItemImage(imagePath: "assets/images/${item.foto}"),
+              ProductsGridItemGradient(),
+              ProductsGridItemTitle(title: item.titulo),
+            ],
+          ),
         ),
       ),
     );
