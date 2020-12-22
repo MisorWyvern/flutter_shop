@@ -8,13 +8,28 @@ class ProductsGridItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      alignment: Alignment.center,
-      children: [
-        ProductsGridItemImage(imagePath: "assets/images/${item.foto}"),
-        ProductsGridItemGradient(),
-        ProductsGridItemTitle(title: item.titulo),
-      ],
+    return Container(
+      decoration: BoxDecoration(
+        boxShadow: [
+          BoxShadow(
+            spreadRadius: 1.5,
+            blurRadius: 8,
+            color: Colors.black12,
+          ),
+        ],
+      ),
+      margin: EdgeInsets.all(8),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16),
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            ProductsGridItemImage(imagePath: "assets/images/${item.foto}"),
+            ProductsGridItemGradient(),
+            ProductsGridItemTitle(title: item.titulo),
+          ],
+        ),
+      ),
     );
   }
 }

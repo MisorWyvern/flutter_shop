@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_shop/main.dart';
 import 'package:flutter_shop/widgets/custom_appbar.dart';
@@ -63,7 +62,18 @@ class HomePage extends StatelessWidget {
       appBar: CustomAppBar(
         title: "Início",
       ),
-      body: ProductsGrid(products: moveis),
+      body: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(child: Divider()),
+              Expanded(child: Text("Produtos", textAlign: TextAlign.center,)),
+              Expanded(child: Divider()),
+            ],
+          ),
+          Flexible(child: ProductsGrid(products: moveis)),
+        ],
+      ),
     );
   }
 }
