@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shop/main.dart';
 import 'package:flutter_shop/models/product.dart';
 import 'package:flutter_shop/widgets/custom_appbar.dart';
 import 'package:flutter_shop/widgets/detalhes_card.dart';
@@ -23,10 +22,12 @@ class Detalhes extends StatelessWidget {
         appBar: CustomAppBar(title: "Detalhes"),
         body: Align(
           alignment: Alignment.bottomCenter,
-                  child: Container(
+          child: Container(
             height: 200,
             margin: EdgeInsets.all(16),
-            child: DetalhesCard(product: product,),
+            child: DetalhesCard(
+              product: product,
+            ),
           ),
         ),
       ),

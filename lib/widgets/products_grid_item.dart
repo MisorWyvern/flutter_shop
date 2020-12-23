@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/models/color_palette.dart';
 import 'package:flutter_shop/models/product.dart';
 import 'package:flutter_shop/pages/detalhes.dart';
 
@@ -25,7 +26,9 @@ class ProductsGridItem extends StatelessWidget {
         child: InkWell(
           onTap: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => Detalhes(product: item)));
+                context,
+                MaterialPageRoute(
+                    builder: (context) => Detalhes(product: item)));
           },
           child: Stack(
             alignment: Alignment.center,
@@ -67,7 +70,7 @@ class ProductsGridItemGradient extends StatelessWidget {
           end: Alignment.bottomCenter,
           colors: [
             Colors.transparent,
-            Color.fromRGBO(178, 155, 178, 1),
+            ColorPalette().lilas[600],
           ],
         ),
       ),
@@ -84,7 +87,10 @@ class ProductsGridItemTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       bottom: 10,
-      child: Text(title),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.headline4,
+      ),
     );
   }
 }

@@ -67,7 +67,12 @@ class HomePage extends StatelessWidget {
           Row(
             children: [
               Expanded(child: Divider()),
-              Expanded(child: Text("Produtos", textAlign: TextAlign.center,)),
+              Expanded(
+                  child: Text(
+                "Produtos",
+                textAlign: TextAlign.center,
+                style: Theme.of(context).textTheme.headline5,
+              )),
               Expanded(child: Divider()),
             ],
           ),

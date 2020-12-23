@@ -12,13 +12,13 @@ class Product {
   }
 
   String get titulo => _titulo;
-  set titulo(String titulo) => _titulo = titulo;
+  //set titulo(String titulo) => _titulo = titulo;
   int get preco => _preco;
-  set preco(int preco) => _preco = preco;
+  //set preco(int preco) => _preco = preco;
   String get foto => _foto;
-  set foto(String foto) => _foto = foto;
+  //set foto(String foto) => _foto = foto;
   String get descricao => _descricao;
-  set descricao(String descricao) => _descricao = descricao;
+  //set descricao(String descricao) => _descricao = descricao;
 
   Product.fromJson(Map<String, dynamic> json) {
     _titulo = json['titulo'];
