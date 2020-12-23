@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/models/cart_item.dart';
 import 'package:flutter_shop/models/product.dart';
+import 'package:flutter_shop/pages/home_page.dart';
 import 'package:intl/intl.dart';
 
 class DetalhesCard extends StatelessWidget {
   final Product product;
+  final Function updateState;
   final formatReal = NumberFormat.currency(locale: 'pt_BR', symbol: 'R\$');
 
-  DetalhesCard({Key key, this.product}) : super(key: key);
+  DetalhesCard({Key key, this.product, this.updateState}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,10 @@ class DetalhesCard extends StatelessWidget {
                   flex: 1,
                   child: FlatButton(
                     color: Theme.of(context).primaryColor,
-                    onPressed: () {},
+                    onPressed: () {
+                      _addCartItem(
+                          CartItem(product: product, amount: 1), context);
+                    },
                     child: Text(
                       'Adicionar ao Carrinho',
                       textAlign: TextAlign.center,
@@ -48,6 +54,15 @@ class DetalhesCard extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _addCartItem(CartItem item, BuildContext context) {
+    HomePage.cartItems.add(item);
+    Scaffold.of(context).showSnackBar(
+      SnackBar(
+          content: Text("${item.product.titulo} foi adicionado ao carrinho.")),
+    );
+    updateState();
   }
 }
 

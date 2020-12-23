@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop/main.dart';
+import 'package:flutter_shop/widgets/cart_list.dart';
 import 'package:flutter_shop/widgets/custom_appbar.dart';
 
 class Carrinho extends StatelessWidget {
@@ -11,7 +12,7 @@ class Carrinho extends StatelessWidget {
         title: "Carrinho",
         isCarrinhoPage: true,
       ),
-      body: Container(),
+      body: CartList(),
     );
   }
 }

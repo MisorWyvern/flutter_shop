@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shop/pages/home_page.dart';
 
 class CartButton extends StatelessWidget {
   @override
@@ -19,10 +20,44 @@ class CartButton extends StatelessWidget {
         height: 40,
         padding: EdgeInsets.symmetric(horizontal: 20),
         alignment: Alignment.centerRight,
-        child: Image.asset(
+        child: _showCartButtonNotification(),
+      ),
+    );
+  }
+
+  _showCartButtonNotification() {
+    if (HomePage.cartItems.length == 0) {
+      return Stack(
+        children: [
+          Image.asset(
+            "assets/icons/carrinho.png",
+            height: 32,
+          ),
+        ],
+      );
+    }
+
+    return Stack(
+      children: [
+        Image.asset(
           "assets/icons/carrinho.png",
           height: 32,
         ),
+        CartButtonNotification(),
+      ],
+    );
+  }
+}
+
+class CartButtonNotification extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 10,
+      width: 10,
+      decoration: BoxDecoration(
+        color: Theme.of(context).primaryColor,
+        shape: BoxShape.circle,
       ),
     );
   }

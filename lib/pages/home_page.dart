@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop/main.dart';
+import 'package:flutter_shop/models/cart_item.dart';
 import 'package:flutter_shop/widgets/custom_appbar.dart';
 import 'package:flutter_shop/widgets/products_grid.dart';
 
 class HomePage extends StatelessWidget {
+  static List<CartItem> cartItems = [];
+
   final List moveis = [
     {
       "titulo": "Mesa",
