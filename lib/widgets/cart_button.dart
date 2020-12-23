@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_shop/pages/home_page.dart';
 
-class CartButton extends StatelessWidget {
+class CartButton extends StatefulWidget {
+  @override
+  _CartButtonState createState() => _CartButtonState();
+}
+
+class _CartButtonState extends State<CartButton> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, "/carrinho");
+        Navigator.pushNamed(context, "/carrinho")
+            .then((value) => setState(() {}));
       },
       child: Container(
         margin: EdgeInsets.only(top: 8),

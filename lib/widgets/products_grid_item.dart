@@ -5,8 +5,10 @@ import 'package:flutter_shop/pages/detalhes.dart';
 
 class ProductsGridItem extends StatelessWidget {
   final Product item;
+  final Function updateState;
 
-  const ProductsGridItem({Key key, @required this.item}) : super(key: key);
+  const ProductsGridItem({Key key, @required this.item, this.updateState})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +28,10 @@ class ProductsGridItem extends StatelessWidget {
         child: InkWell(
           onTap: () {
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => Detalhes(product: item)));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Detalhes(product: item)))
+                .then((value) => updateState());
           },
           child: Stack(
             alignment: Alignment.center,

@@ -22,6 +22,12 @@ class FlutterShop extends StatelessWidget {
         primarySwatch: ColorPalette().lilas,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: TextTheme(
+          bodyText1: TextStyle(
+            color: Colors.white,
+          ),
+          bodyText2: TextStyle(
+            color: Colors.black,
+          ),
           headline4: TextStyle(
               fontSize: 16,
               fontFamily: 'Alata',

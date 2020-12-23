@@ -56,13 +56,33 @@ class DetalhesCard extends StatelessWidget {
     );
   }
 
-  _addCartItem(CartItem item, BuildContext context) {
+  void _addCartItem(CartItem item, BuildContext context) {
+    if (_updateCartItemListAmount(HomePage.cartItems, item, context) == true)
+      return;
+
     HomePage.cartItems.add(item);
     Scaffold.of(context).showSnackBar(
       SnackBar(
-          content: Text("${item.product.titulo} foi adicionado ao carrinho.")),
+          content:
+              Text("${item.product.titulo} foi adicionado(a) ao carrinho.")),
     );
     updateState();
+  }
+
+  bool _updateCartItemListAmount(
+      List<CartItem> list, CartItem item, BuildContext context) {
+    int itemIndex =
+        list.indexWhere((element) => element.product == item.product);
+
+    if (itemIndex < 0) return false;
+
+    Scaffold.of(context).showSnackBar(
+      SnackBar(
+          content: Text(
+              "Outro(a) ${item.product.titulo} foi adicionado(a) ao carrinho.")),
+    );
+    list[itemIndex].amount++;
+    return true;
   }
 }
 

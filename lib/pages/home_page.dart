@@ -4,7 +4,7 @@ import 'package:flutter_shop/models/cart_item.dart';
 import 'package:flutter_shop/widgets/custom_appbar.dart';
 import 'package:flutter_shop/widgets/products_grid.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   static List<CartItem> cartItems = [];
 
   final List moveis = [
@@ -59,6 +59,11 @@ class HomePage extends StatelessWidget {
     }
   ];
   @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: scaffoldBgColor,
@@ -79,9 +84,18 @@ class HomePage extends StatelessWidget {
               Expanded(child: Divider()),
             ],
           ),
-          Flexible(child: ProductsGrid(products: moveis)),
+          Flexible(
+            child: ProductsGrid(
+              products: widget.moveis,
+              updateState: _updateState,
+            ),
+          ),
         ],
       ),
     );
+  }
+
+  void _updateState() {
+    setState(() {});
   }
 }
