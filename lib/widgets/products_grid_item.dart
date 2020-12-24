@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_shop/models/color_palette.dart';
 import 'package:flutter_shop/models/product.dart';
 import 'package:flutter_shop/pages/detalhes.dart';
+import 'package:flutter_shop/widgets/custom_title.dart';
 
 class ProductsGridItem extends StatelessWidget {
   final Product item;
@@ -73,7 +74,7 @@ class ProductsGridItemGradient extends StatelessWidget {
           end: Alignment.bottomCenter,
           colors: [
             Colors.transparent,
-            ColorPalette().lilas[600],
+            ColorPalette().carafe[600],
           ],
         ),
       ),
@@ -90,9 +91,9 @@ class ProductsGridItemTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned(
       bottom: 10,
-      child: Text(
-        title,
-        style: Theme.of(context).textTheme.headline4,
+      child: CustomTitle(
+        title: title,
+        fontSize: 16,
       ),
     );
   }

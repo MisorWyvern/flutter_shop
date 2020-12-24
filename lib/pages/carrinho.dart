@@ -21,17 +21,25 @@ class _CarrinhoState extends State<Carrinho> {
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Row(
           children: [
-            Row(
-              children: [
-                Text(
-                  "Total: ",
-                  style: Theme.of(context).textTheme.headline4,
-                ),
-                Text(
-                  "${widget.formatReal.format(_sumCartItemList())}",
-                  style: TextStyle(color: Colors.white),
-                ),
-              ],
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Total: ",
+                    style: Theme.of(context).textTheme.headline4,
+                  ),
+                  Text(
+                    "${widget.formatReal.format(_sumCartItemList())}",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  FlatButton(
+                    color: Theme.of(context).accentColor,
+                    onPressed: () {},
+                    child: Text("Finalizar Compra"),
+                  )
+                ],
+              ),
             ),
           ],
         ),

@@ -19,7 +19,8 @@ class FlutterShop extends StatelessWidget {
       title: 'Flutter Shop',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: ColorPalette().lilas,
+        primarySwatch: ColorPalette().carafe,
+        accentColor: ColorPalette().seafoamGreen,
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: TextTheme(
           bodyText1: TextStyle(
@@ -28,11 +29,16 @@ class FlutterShop extends StatelessWidget {
           bodyText2: TextStyle(
             color: Colors.black,
           ),
+          headline3: TextStyle(
+              fontSize: 24,
+              fontFamily: 'Alata',
+              fontWeight: FontWeight.bold,
+              color: ColorPalette().seafoamGreen[500]),
           headline4: TextStyle(
               fontSize: 16,
               fontFamily: 'Alata',
               fontWeight: FontWeight.bold,
-              color: Colors.white),
+              color: ColorPalette().seafoamGreen),
           headline5: TextStyle(
               fontSize: 16,
               fontFamily: 'Alata',
@@ -42,7 +48,7 @@ class FlutterShop extends StatelessWidget {
               fontSize: 20,
               fontFamily: 'Alata',
               fontWeight: FontWeight.bold,
-              color: Colors.black),
+              color: ColorPalette().carafe),
         ),
       ),
       home: HomePage(),
